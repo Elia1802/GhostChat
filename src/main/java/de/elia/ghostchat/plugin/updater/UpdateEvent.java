@@ -31,6 +31,7 @@ import de.elia.ghostchat.GhostChat;
 import de.elia.ghostmain.GhostMain;
 import de.elia.ghostmain.all.plugins.prefix.Prefix;
 import de.elia.ghostmain.all.plugins.updater.Updater;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -46,12 +47,12 @@ public class UpdateEvent implements Listener {
     @EventHandler
     public void onUpdate(@NotNull PlayerJoinEvent event){
         Player player = event.getPlayer();
-        new Updater(GhostChat.getInstance() , 0).getVersion(version -> {
+        new Updater(GhostChat.getInstance() , 103209).getVersion(version -> {
             if (!GhostChat.getInstance().getDescription().getVersion().equals(version)) {
                 if (GhostMain.getInstance().getPermissionOwnerConfiguration().get(".Name " + player.getName() + " " + ".UniqueID " + player.getUniqueId() + " " + ".Permission " + ownerPermissionID , true)) {
-                    player.sendMessage(Prefix.getGhostChatSystem() + "There is a new update of Ghostchat available!");
+                    player.sendMessage(Prefix.getGhostChatSystem() + ChatColor.GOLD + "There is a new update of Ghostchat available!");
                 }else if (GhostMain.getInstance().getPermissionDeveloperConfiguration().get(".Name " + player.getName() + " " + ".UniqueID " + player.getUniqueId() + " " + ".Permission " + developerPermissionID ,true)) {
-                    player.sendMessage(Prefix.getGhostChatSystem() + "There is a new update of Ghostchat available!");
+                    player.sendMessage(Prefix.getGhostChatSystem() + ChatColor.GOLD + "There is a new update of Ghostchat available!");
                 }
             }
         });
