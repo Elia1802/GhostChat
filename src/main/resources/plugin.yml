@@ -1,0 +1,19 @@
+name: Ghostchat
+version: '${project.version}'
+main: de.elia.ghostchat.GhostChat
+api-version: 1.18
+authors: [ Elia ]
+description: The ChatSystem of Ghost
+commands:
+  chatupdate:
+    description: Checks for updates and sends information about the current version
+    aliases:
+      - chupdate
+      - chatud
+      - chu
+  chathelp:
+    description: send a help about the Commands and aliases
+    aliases:
+      - chhelp
+      - chath
+      - chh
