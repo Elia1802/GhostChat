@@ -608,11 +608,11 @@ public final class GhostChat extends JavaPlugin {
                     ENGLISH.add("zoophilia");
                 Bukkit.getLogger().info(Prefix.getGhostLogger() + "Lists loaded");
                 Bukkit.getLogger().info(Prefix.getGhostLogger() + "checks for Updates");
-                    new Updater(this , 0).getVersion(version -> {
+                    new Updater(this , 103209).getVersion(version -> {
                         if (!this.getDescription().getVersion().equals(version)) {
-                            Bukkit.getLogger().info(Prefix.getGhostLogger() + "There is not a new Update for the Ghostchat available!");
+                            Bukkit.getLogger().warning(Prefix.getGhostLogger() + "There is a new Update for the Ghostchat available!");
                         }else {
-                            Bukkit.getLogger().warning(Prefix.getGhostLogger() + "There is a new Update for the Ghostchat System available!");
+                            Bukkit.getLogger().info(Prefix.getGhostLogger() + "There is not a new Update for the Ghostchat System available!");
                         }
                     });
                 Bukkit.getLogger().info(Prefix.getGhostLogger() + "Update checks");
@@ -628,7 +628,11 @@ public final class GhostChat extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        Bukkit.getLogger().info(Prefix.getGhostLogger() + "Stop Ghostchat");
+        Bukkit.getLogger().info(Prefix.getGhostLogger() + "Stop Commands");
+        Bukkit.getLogger().info(Prefix.getGhostLogger() + "Stop Events");
+        Bukkit.getLogger().info(Prefix.getGhostLogger() + "Save Config");
+        Bukkit.getLogger().info(Prefix.getGhostLogger() + "Ghostchat stopped");
     }
 
     @NotNull
@@ -666,3 +670,4 @@ public final class GhostChat extends JavaPlugin {
         return instance;
     }
 }
+
